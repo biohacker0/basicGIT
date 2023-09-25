@@ -1,4 +1,4 @@
-# GitHub Repository Summary: Custom Git-Like Tool
+A Custom Git-Like Tool(Simulator)
 
 ## Project Description
 I Built a custom Git-like tool implemented in Python. This tool allows users to perform basic version control operations such as initializing a repository, adding files to the staging area, committing changes, viewing commit history, creating branches, switching between branches, and merging branches.
