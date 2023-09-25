@@ -148,8 +148,10 @@ Enter target branch: main
 
 # You will receive a message that the changes are merged
 Merged changes from 'feature-branch' into 'main'
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Method 2: Command Line Interface (CLI)
+
+###Method 2: Command Line Interface (CLI)
 
    - Initialize a repository:
      ```bash
