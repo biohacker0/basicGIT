@@ -168,9 +168,6 @@ def merge_branch(repo_name, source_branch, target_branch):
 ##############################################################################################################################
 
 
-import os
-import shutil
-import argparse
 
 # deinitiopns of my existing Git-like functions (init_repository, add_files, commit, log, etc.)
 
