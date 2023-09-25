@@ -11,7 +11,7 @@ def init_repository(repo_name):
         print("Repository already exists.")
         return
 
-    # Create the repository directory if it doesn't exist
+    # Creates the repository directory if it doesn't exist
     os.makedirs(repo_path)
     os.makedirs(os.path.join(repo_path, "objects"))
     os.makedirs(os.path.join(repo_path, "refs", "heads"))
@@ -39,7 +39,7 @@ def add_files(repo_name, file_paths):
             content = f.read()
             file_hash = hash(content)
 
-        # Create a copy of the file in the staging area
+        # Creates a copy of the file in the staging area
         staged_file_path = os.path.join(staging_area_path, str(file_hash))
         shutil.copy(file_path, staged_file_path)
         
@@ -61,21 +61,21 @@ def commit(repo_name, message):
     with open(commit_message_file, "w") as f:
         f.write(message)
 
-    # Create the 'commits' directory if it doesn't exist
+    # Creates the 'commits' directory if it doesn't exist
     if not os.path.exists(commits_path):
         os.makedirs(commits_path)
 
-    # Create a new commit directory
+    # Creates a new commit directory
     commit_number = len(os.listdir(commits_path)) + 1
     commit_dir = os.path.join(commits_path, str(commit_number))
     os.makedirs(commit_dir)
 
-    # Copy staged files to the commit directory
+    # Copyis staged files to the commit directory
     for staged_file in os.listdir(staging_area_path):
         staged_file_path = os.path.join(staging_area_path, staged_file)
         shutil.copy(staged_file_path, os.path.join(commit_dir, staged_file))
 
-    # Clean up the staging area
+    # Cleans up the staging area
     shutil.rmtree(staging_area_path)
 
     print(f"Committed {commit_number}: {message}")
@@ -110,7 +110,7 @@ def create_branch(repo_name, branch_name):
         print(f"A branch with the name '{branch_name}' already exists.")
         return
 
-    # Create the branch file
+    # Creates the branch file
     with open(branch_file, "w") as f:
         f.write("")
 
@@ -128,7 +128,7 @@ def checkout_branch(repo_name, branch_name):
         print(f"A branch with the name '{branch_name}' does not exist.")
         return
 
-    # Update the HEAD to point to the selected branch
+    # Updates the HEAD to point to the selected branch
     head_file = os.path.join(repo_path, "HEAD")
     with open(head_file, "w") as f:
         f.write(f"ref: refs/heads/{branch_name}\n")
@@ -153,7 +153,7 @@ def merge_branch(repo_name, source_branch, target_branch):
         print(f"The target branch '{target_branch}' does not exist.")
         return
 
-    # Check if the current branch is the target branch
+    # Checks if the current branch is the target branch
     head_file = os.path.join(repo_path, "HEAD")
     with open(head_file, "r") as f:
         current_branch = f.read().strip().replace("ref: refs/heads/", "")
@@ -162,7 +162,7 @@ def merge_branch(repo_name, source_branch, target_branch):
         print(f"You are not on the target branch '{target_branch}'. Please switch to it first.")
         return
 
-    # Merge changes from the source branch into the target branch (simplified for demonstration)
+    # Merges changes from the source branch into the target branch (simplified for demonstration)
     print(f"Merged changes from '{source_branch}' into '{target_branch}'")
 
 ##############################################################################################################################
@@ -172,7 +172,7 @@ import os
 import shutil
 import argparse
 
-# Define your existing Git-like functions (init_repository, add_files, commit, log, etc.)
+# deinitiopns of my existing Git-like functions (init_repository, add_files, commit, log, etc.)
 
 def init_command(args):
     init_repository(args.repo_name)
@@ -213,7 +213,7 @@ log_parser.add_argument("repo_name", help="Repository name")
 # Parse the command-line arguments
 args = parser.parse_args()
 
-# # Dispatch to the appropriate command function based on the subcommand
+# #  appropriate command function based on the subcommand
 # if args.command == "init":
 #     init_command(args)
 # elif args.command == "add":
