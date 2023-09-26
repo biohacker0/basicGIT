@@ -17,7 +17,7 @@ Its not git "git" , more like a fancy file mover which simulates git like featur
 
 6. **Switching Between Branches (`checkout`):** Users can switch to a different branch using the `checkout` command. The `HEAD` file is updated to reference the selected branch.
 
-7. **Merging Branches (`merge`):** Merging changes from one branch into another is accomplished with the `merge` command. Currently, this command simply displays a message indicating that changes have been merged.
+
 
 ## Instructions to Use
 1. Clone the repository to your local machine using `git clone` or by downloading the ZIP file.
